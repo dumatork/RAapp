@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
+<!-- MDB -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
+
+
+<style>
+    .button {
+      background-color: #0000FF; 
+      border: none;
+      color: white;
+      padding: 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      border: 2px solid rgba(9, 148, 28, 0.541);
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+      
+    }
+    .wrap {
+    border: solid 1px #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #output {
+    display: inline-block;
+    top: 4px;
+    position: relative;
+    border: dotted 1px #ccc;
+    padding: 2px;
+  }
+  
+  .button {
+    border: solid 2px #ccc;
+  }
+  
+    </style>
+
+
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+  <button type="button" class="btn btn-dark btn-rounded" id="btn1">Bugatti</button>
+  <button type="button" class="btn btn-secondary btn-rounded" id="btn2">Iridium</button>
+  <button type="button" class="btn btn-dark btn-rounded" id="btn3">Llantita</button>
+  <button type="button" class="btn btn-secondary btn-rounded" id="btn4">Medusa</button>
+  <button type="button"  value="Actualizar" onclick="location.reload()" class="btn btn-warning btn-rounded" href="index.html">Recargar</button> 
+</div>
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">  
+   
+      <a-marker preset="hiro">
+        <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="Spotted-Jelly.gltf"></video>
+        <a-video src="#mivideo" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+       
+        <a-entity id="entityID1">
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+
+    <script>
+        
+     document.getElementById("btn1").addEventListener("click", (e)=>{
+                    var el = document.querySelector('#entityID1');
+                    el.setAttribute("obj-model", 'obj:url(Modelos/buga.obj);mtl:url(Modelos/buga.mtl)');
+                    el.setAttribute("scale",'0.25 0.25 0.25');
+                                      
+})
+    
+document.getElementById("btn2").addEventListener("click", (e)=>{
+                    
+                    var el = document.querySelector('#entityID1');
+              
+                    el.setAttribute("obj-model", 'obj:url(Modelos/Iridium.obj);mtl:url(Modelos/Iridium.mtl)');
+                    el.setAttribute("scale",'0.002 0.002 0.002');               
+})
+
+document.getElementById("btn3").addEventListener("click", (e)=>{
+                    
+                    var el = document.querySelector('#entityID1');
+              
+                    el.setAttribute("obj-model", 'obj:url(Modelos/Llantita.obj);mtl:url(Modelos/Llantita.mtl)');
+                    el.setAttribute("scale",'.10 .10 .10');               
+})
+
+
+document.getElementById("btn4").addEventListener("click", (e)=>{
+                    var el = document.querySelector('#cube');
+                    el.setAttribute("gltf-model", 'gltf:url(model3d/Spotted-Jelly.gltf)');
+                    el.setAttribute("scale",'0.05 0.05 0.05');
+})
+
+
+
+</script>  
+  </body>
+</html>
+
+
+
+
+

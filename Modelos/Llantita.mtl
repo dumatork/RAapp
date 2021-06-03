@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Blacktop_New
+Ka 0.000000 0.000000 0.000000
+Kd 0.117647 0.117647 0.117647
+Ks 0.330000 0.330000 0.330000
+map_Kd Llantita/Blacktop_New.jpg
+
+newmtl ForegroundColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Metal_Aluminum_Anodized
+Ka 0.000000 0.000000 0.000000
+Kd 0.792157 0.819608 0.858824
+Ks 0.330000 0.330000 0.330000
+map_Kd Llantita/Metal_Aluminum_Anodized.jpg
+
